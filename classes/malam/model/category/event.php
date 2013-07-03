@@ -6,7 +6,7 @@ defined('SYSPATH') or die('No direct script access.');
  * @author  arie
  */
 
-abstract class Mymusic_Model_Category_Event extends Model_Hierarchy
+abstract class Malam_Model_Category_Event extends Model_Hierarchy
 {
     /**
      * "Has many" relationships

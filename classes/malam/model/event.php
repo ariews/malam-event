@@ -6,7 +6,7 @@ defined('SYSPATH') or die('No direct script access.');
  * @author  arie
  */
 
-abstract class Mymusic_Model_Event extends Model_Bigcontent
+abstract class Malam_Model_Event extends Model_Bigcontent
 {
     /**
      * Admin route name
