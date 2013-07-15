@@ -21,5 +21,5 @@ abstract class Malam_Model_Category_Event extends Model_Hierarchy
      *
      * @var string
      */
-    protected $_hieracy_name    = 'event';
+    protected $_hierarchy_name  = 'event';
 }
