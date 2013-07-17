@@ -21,15 +21,6 @@ abstract class Malam_Model_Event extends Model_Bigcontent
     protected $_route_name      = 'event';
 
     /**
-     * "Belongs to" relationships
-     * @var array
-     */
-    protected $_belongs_to      = array(
-        'user'          => array('model' => 'user', 'foreign_key' => 'user_id'),
-        'category'      => array('model' => 'category_event', 'foreign_key' => 'hierarchy_id'),
-    );
-
-    /**
      * "Has one" relationships
      * @var array
      */
