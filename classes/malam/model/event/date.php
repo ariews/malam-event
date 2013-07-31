@@ -54,7 +54,7 @@ abstract class Malam_Model_Event_Date extends ORM
     {
         return array(
             'event_id' => array(
-                array(array($this, 'Filter_Event_Id'))
+                array('ORM::Check_Model', array(':value', 'Event')),
             ),
             'start_date' => array(
                 array(array($this, 'Filter_Event_Date'))
@@ -66,11 +66,6 @@ abstract class Malam_Model_Event_Date extends ORM
                 array('trim')
             ),
         );
-    }
-
-    public function Filter_Event_Id($value)
-    {
-        return $this->_check_model($value, 'Event');
     }
 
     public function Filter_Event_Date($value)
