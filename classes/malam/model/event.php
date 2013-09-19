@@ -91,4 +91,27 @@ abstract class Malam_Model_Event extends Model_Bigcontent
 
         return $result;
     }
+
+    public static function next_events($limit = 10, Model_Event $event = NULL)
+    {
+        if (NULL === $event || $event->loaded())
+        {
+            $event  = ORM::factory('event');
+        }
+
+        $evdate = ORM::factory('event_date');
+        $rel    = $event->has_one();
+        $rel    = $rel['dates'];
+
+        return $event->join($evdate->table_name())
+            ->on(
+                "{$evdate->table_name()}.{$rel['foreign_key']}",
+                '=',
+                "{$event->object_name()}.{$event->primary_key()}"
+            )
+            ->where("{$evdate->table_name()}.start_date", '>=', DB::expr('NOW()'))
+            ->limit($limit)
+            ->find_all()
+            ;
+    }
 }
