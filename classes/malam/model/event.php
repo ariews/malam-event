@@ -110,6 +110,7 @@ abstract class Malam_Model_Event extends Model_Bigcontent
                 "{$event->object_name()}.{$event->primary_key()}"
             )
             ->where("{$evdate->table_name()}.start_date", '>=', DB::expr('NOW()'))
+            ->order_by("{$evdate->table_name()}.start_date", 'DESC')
             ->limit($limit)
             ->find_all()
             ;
