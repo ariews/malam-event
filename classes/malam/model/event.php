@@ -9,18 +9,6 @@ defined('SYSPATH') or die('No direct script access.');
 abstract class Malam_Model_Event extends Model_Bigcontent
 {
     /**
-     * Admin route name
-     * @var string
-     */
-    protected $_admin_route_name = 'admin-event';
-
-    /**
-     * Route name
-     * @var string
-     */
-    protected $_route_name      = 'event';
-
-    /**
      * "Has one" relationships
      * @var array
      */
@@ -35,6 +23,13 @@ abstract class Malam_Model_Event extends Model_Bigcontent
     protected $_is_direct_call  = FALSE;
 
     protected $_tag_enable      = FALSE;
+
+    /**
+     * Name Field
+     *
+     * @var string
+     */
+    protected $_name_field      = 'name';
 
     public function to_paginate()
     {
